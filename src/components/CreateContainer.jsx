@@ -5,7 +5,6 @@ import {
   MdFastfood,
   MdCloudUpload,
   MdDelete,
-  MdAttachMoney,
 } from "react-icons/md";
 
 import { categories } from "../utils/data";
@@ -254,7 +253,7 @@ const CreateContainer = () => {
           </div> */}
 
           <div className="flex w-full items-center gap-2 border-b border-gray-300 py-2">
-            <MdAttachMoney className="text-2xl text-gray-700" />
+            <p className="text-2xl text-gray-700">₦</p>
             <input
               type="text"
               required

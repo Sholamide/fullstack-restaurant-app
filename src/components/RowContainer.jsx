@@ -70,7 +70,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
             </p>
             <div className="flex items-center gap-8">
               <p className="text-lg text-headingColor font-semibold">
-                <span className="text-sm text-[#d49c3c]">$</span> {item?.price}
+                <span className="text-sm text-[#d49c3c]">₦</span> {item?.price}
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
       ))
     ) : (
       <div className="w-full flex flex-col items-center justify-center">
-        <FcCancel className="h-150 w-150" />
+        <FcCancel className="h-[70px] w-[70px]" />
         <p className="text-xl text-headingColor font-semibold my-2">
            Not Available at the moment
         </p>

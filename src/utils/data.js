@@ -1,6 +1,6 @@
-import image1 from "../img/image1.png";
-import image2 from "../img/pamplona.png";
-import image3 from "../img/oatmeal.png";
+import image1 from "../img/c7.png";
+import image2 from "../img/c1.png";
+import image3 from "../img/c6.png";
 import image4 from "../img/fi2.png";
 import {MdBreakfastDining,MdLunchDining,MdDinnerDining} from 'react-icons/md'
 import {GiIceCreamCone,GiMilkCarton, GiBeerBottle} from 'react-icons/gi'
@@ -8,42 +8,28 @@ import {BiDrink} from 'react-icons/bi'
 export const heroData = [
   {
     id: 1,
-    name: "Coolio Dip",
-    decp: "Delicious.",
+    name: "Chicken and Chips",
+    decp: "special recipe.",
     price: "11",
     imageSrc: image1,
   },
   {
     id: 2,
-    name: "Pamplona",
-    decp: "stuffed-meat dish.",
+    name: "Pamplona Chicken",
+    decp: "stuffed-chicken dish.",
     price: "20",
     imageSrc: image2,
   },
   {
     id: 3,
-    name: "Oatmeal Cookie",
-    decp: "Rolled oats.",
+    name: "Hot-Pan Platter ",
+    decp: "chicken.",
     price: "25",
     imageSrc: image3,
   },
   {
     id: 4,
-    name: "Coolio Special ",
-    decp: "Coolio special.",
-    price: "25",
-    imageSrc: image4,
-  },
-  {
-    id: 4,
-    name: "Coolio Dish ",
-    decp: "Coolio special.",
-    price: "25",
-    imageSrc: image4,
-  },
-  {
-    id: 4,
-    name: "Coolio Special ",
+    name: "Grilled Fish ",
     decp: "Coolio special.",
     price: "25",
     imageSrc: image4,
@@ -91,6 +77,12 @@ export const categories = [
     id: 8,
     name: "Alchohol",
     urlParamName: "alchohol",
+    icon:<GiBeerBottle />
+  },
+  {
+    id: 9,
+    name: "Specials",
+    urlParamName: "specials",
     icon:<GiBeerBottle />
   },
 ];

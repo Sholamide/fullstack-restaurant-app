@@ -3,24 +3,24 @@ import { useStateValue } from "../context/StateProvider";
 import CartContainer from "./CartContainer";
 import HomeContainer from "./HomeContainer";
 import MenuContainer from "./MenuContainer";
-import FeatureContainer from "./FeatureContainer";
-import StoryContainer from "./StoryContainer";
-
+import RowContainer from "./RowContainer";
+import { motion } from "framer-motion";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 const MainContainer = () => {
-  const [{ cartShow }] = useStateValue();
-  const [scrollValue] = useState(0);
+  const [{ foodItems, cartShow }] = useStateValue();
+  const [scrollValue, setScrollValue] = useState(0);
 
   useEffect(() => {}, [scrollValue, cartShow]);
 
   return (
     <div className="flex h-auto w-full flex-col items-center justify-center ">
       <HomeContainer />
-      <FeatureContainer />
-      <StoryContainer />
-      {/* <section className="my-6 w-full">
+      {/* <FeatureContainer />
+      <StoryContainer /> */}
+       <section className="my-6 w-full">
         <div className="flex w-full items-center justify-between">
           <p className="before:content relative from-orange-400 to-orange-600 text-2xl font-semibold capitalize text-headingColor transition-all duration-100 ease-in-out before:absolute before:-bottom-2 before:left-0 before:h-1 before:w-32 before:rounded-lg before:bg-gradient-to-tr">
-            Our fresh & healthy fruits
+            Our Specials
           </p>
 
           <div className="hidden items-center gap-3 md:flex">
@@ -43,9 +43,9 @@ const MainContainer = () => {
         <RowContainer
           scrollValue={scrollValue}
           flag={true}
-          data={foodItems?.filter((n) => n.category === "fruits")}
+          data={foodItems?.filter((n) => n.category === "specials")}
         />
-      </section> */}
+      </section> 
 
       <MenuContainer />
 

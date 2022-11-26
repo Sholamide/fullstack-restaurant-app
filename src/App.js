@@ -8,9 +8,8 @@ import { useStateValue } from "./context/StateProvider";
 import { actionType } from "./context/reducer";
 
 const App = () => {
-  const [ dispatch] = useStateValue();
+  const [{ foodItems }, dispatch] = useStateValue();
  
-
   useEffect(() => {
     const fetchData = async () => {
       await getAllFoodItems().then((data) => {
@@ -21,6 +20,7 @@ const App = () => {
       });
     };
     fetchData();
+    console.log(fetchData);
   }, [dispatch]);
 
   return (
