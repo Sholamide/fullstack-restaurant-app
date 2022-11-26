@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { CreateContainer, Header, MainContainer } from "./components";
+import { Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import ErrorPage from "./components/ErrorPage";
+import { getAllFoodItems } from "./utils/firebaseFunctions";
+import { useStateValue } from "./context/StateProvider";
+import { actionType } from "./context/reducer";
 
-function App() {
+const App = () => {
+  const [ dispatch] = useStateValue();
+ 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await getAllFoodItems().then((data) => {
+        dispatch({
+          type: actionType.SET_FOOD_ITEMS,
+          foodItems: data,
+        });
+      });
+    };
+    fetchData();
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnimatePresence mode="wait">
+      <div className="flex h-auto w-screen flex-col">
+        <Header />
+        <main className="mt-14 w-full px-4 py-4 md:mt-20 md:px-16">
+          <Routes>
+            <Route path="/" element={<MainContainer />}  />
+            <Route index element={<MainContainer />}  />
+            <Route path="add" element={<CreateContainer />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </main>
+      </div>
+    </AnimatePresence>
   );
-}
+};
 
 export default App;
